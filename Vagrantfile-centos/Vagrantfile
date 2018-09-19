@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.synced_folder ".", "/vagrant", mount_options: ["dmode=700,fmode=600"]
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
+    v.cpus = 4
   end
   config.vm.define :node1 do |node1|
     node1.vm.network :forwarded_port, host: 2202, guest: 22, id: "ssh", auto_correct: true
