@@ -33,6 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	master.vm.hostname = "master"
 	master.vm.provision "shell", path: "bootstrap.sh"
 	master.vm.provision "shell", path: "install_ansible.sh"
+	master.vm.provision "shell", path: "install_kubeadm.sh"
   end
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
