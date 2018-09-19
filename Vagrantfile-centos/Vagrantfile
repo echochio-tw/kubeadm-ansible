@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	master.vm.network :forwarded_port, host: 32162, guest: 32162
 	master.vm.network :forwarded_port, host: 30716, guest: 30716
 	master.vm.network :forwarded_port, host: 2201, guest: 22, id: "ssh", auto_correct: true
-    master.vm.network "private_network", ip: "192.168.22.164"
+	master.vm.network "private_network", ip: "192.168.22.164"
 	master.vm.hostname = "master"
 	master.vm.provision "shell", path: "bootstrap.sh"
 	master.vm.provision "shell", path: "install_ansible.sh"
